@@ -401,3 +401,32 @@ Obrim menú "Settings" -> "Options" -> "Processing"
 Podem escollir scripts de pre o post execució a "General" -> "Post-execution" / "Pre-execution"
 
 No està funcionant encara a QGIS3, WIP!
+
+
+
+#### Hooks
+
+La idea és reaccionar davant de certs esdeveniments.
+
+La clau és trobar les senyals de de la API de QGIS que volem escoltar, p.e "layerAdded" de QgisInterface.
+
+Es poden buscar senyals també mirant la especificació del mètode, p.e QgisInterface.newProject i buscar la senyal, en aquest cas "newProjectCreated".
+
+Obrim la consola i busquem la senyal:
+```
+iface.newProjectCreated
+Out[2]: <bound PYQT_SIGNAL newProjectCreated of QgisInterface object at 0x7f8fa41b2288>
+```
+
+Connectem la senyal:
+```
+iface.newProjectCreated.connect(lambda: print("hhei"))
+```
+
+##### Exercici
+
+Obrir una QgsProjectionSelectionDialog per seleccionar la projecció cada cop que l'usuari obre un projecte
+
+```
+iface.newProjectCreated.connect(lambda: QgsProjectionSelectionDialog().exec())
+```
