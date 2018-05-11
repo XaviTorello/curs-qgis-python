@@ -389,3 +389,15 @@ La funció incrusta un estil que es pot tunejar, p.e canviem el color a vermell 
 p {width: 300px; color: red}
 </style>
 ```
+
+
+
+#### Processing
+
+Existeix la possibilitat de definir algorismes de processing via python
+
+Obrim menú "Settings" -> "Options" -> "Processing"
+
+Podem escollir scripts de pre o post execució a "General" -> "Post-execution" / "Pre-execution"
+
+No està funcionant encara a QGIS3, WIP!
