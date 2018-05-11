@@ -382,3 +382,10 @@ Ara al passar el cursor per sobre de França ens retorna el resum relacionat:
 ```
 France (French: [fʁɑ̃s]), officially the French Republic (French: République française [ʁepyblik fʁɑ̃sɛz]), is a country whose territory consists of metropolitan France in western Europe, as well as several overseas regions and territories. The metropolitan area of France extends from the Mediterranean Sea ...
 ```
+
+La funció incrusta un estil que es pot tunejar, p.e canviem el color a vermell canviant:
+```
+<style>
+p {width: 300px; color: red}
+</style>
+```
