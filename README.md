@@ -1,6 +1,8 @@
 # Curs QGIS 3
 
-@victor olaya
+15/05/2018
+
+Victor Olaya @volaya
 
 //wifi vcppjqn4
 
@@ -21,6 +23,8 @@ Veure tb https://github.com/volaya/curso-qgis-python/blob/master/enlaces.md
 
 ## Workshop
 
+
+### Dia 1
 
 1) Carreguem shape /home/gisce/projects/qgis-curs/curso-qgis-python/datos/.shp
 
@@ -80,7 +84,7 @@ feature[fields_name[0]]
 
 
 
-### Exercici
+#### Exercici
 
 Mirem els attributs de la capa (boto dreta sobre la capa "open attribute table")
 camp "pop_est"
@@ -89,7 +93,7 @@ camp "pop_est"
 sum([feat['POP_EST'] for feat in list(iface.activeLayer().getFeatures())])
 ```
 
-### Com funcionen les cadenes d'expressió?
+#### Com funcionen les cadenes d'expressió?
 
 Com funcionen les cadenes d'expressió:
 - "$COLUMN"
@@ -98,7 +102,7 @@ Com funcionen les cadenes d'expressió:
 p.e "CONTINENT" == 'EUROPE'
 
 
-### Seguim investigant, getFeatures desde QGIS (sense iterar amb python)
+#### Seguim investigant, getFeatures desde QGIS (sense iterar amb python)
 
 https://qgis.org/api/classQgsVectorLayer.html
 
@@ -123,7 +127,7 @@ CPP based filter //much more quick!
 sum([f['POP_EST'] for f in iface.activeLayer().getFeatures('"CONTINENT" = \'Europe\'')])
 ```
 
-### Obrir capa vectorial en memòria per codi
+#### Obrir capa vectorial en memòria per codi
 
 La obrim en memòria, sense tindre-la a QGIS!
 ```
@@ -134,7 +138,7 @@ I podem fer tot lo d'abans, getFeatures, ...
 
 
 
-### Obrir capa vectorial BUIDA en memòria per codi
+#### Obrir capa vectorial BUIDA en memòria per codi
 
 Crearem una capa de punts amb tipus:"Point" i provider:"memory"
 ```
@@ -211,7 +215,7 @@ list(layer.getFeatures())
 ```
 
 
-### Exercici, afegir n features amb punts dinàmics
+#### Exercici, afegir n features amb punts dinàmics
 ```
 from random import randint
 
@@ -231,7 +235,7 @@ for _ in range(HOW_MANY):
 ```
 
 
-### Projeccions
+#### Projeccions
 
 Sistemes de coordenades
 ```
@@ -260,7 +264,6 @@ geom.asWkt()
 ```
 
 
-### Calculadora de camps
+#### Calculadora de camps
 
 Ens ajudarà a crear expressions complexes
-
