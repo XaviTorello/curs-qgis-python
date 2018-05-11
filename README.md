@@ -23,6 +23,9 @@ Veure tb https://github.com/volaya/curso-qgis-python/blob/master/enlaces.md
 
 ## Workshop
 
+- [Dia 1](#dia-1)
+- [Dia 2](#dia-2)
+
 
 ### Dia 1
 
