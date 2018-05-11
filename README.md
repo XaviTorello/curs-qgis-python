@@ -308,3 +308,16 @@ except:
 ```
 
 A la icona de settings apareixerà la nostra nova acció "wikipedia"
+
+
+#### Map tips
+
+Els tips permeten extendre els helpers i els títols d'ajudes relatius als elements mapa (per quan deixes el cursor a sobre durant un rato, com un title d'html).
+
+Per tunejar-ho cal anar a la config d'una layer, secció "Display".
+
+Activar els tips via menú "View" -> "Map tips".
+
+Activem els maps tips, i seleccionem "wikipedia" dins del combo "Display expression".
+
+Al deixar el cursor sobre un país ens apareix el nom del país!
