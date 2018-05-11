@@ -436,3 +436,21 @@ dialeg.crs()
 ```
 
 Bona pràctica, no connectar funcions anònimes! ^^
+
+
+
+#### Project scope
+
+QgsExpressionContextUtils.projectScope()
+
+
+#### Macros
+
+
+#### Plugins
+
+Plantilla para plugins petits: https://github.com/wonder-sk/qgis-minimal-plugin
+
+Plantilla per a plugins més grans: https://github.com/boundlessgeo/qgis-plugin-template
+
+Plugin molt interessant: "QGIS Fist AID",
