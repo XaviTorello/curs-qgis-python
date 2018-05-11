@@ -428,5 +428,11 @@ iface.newProjectCreated.connect(lambda: print("hhei"))
 Obrir una QgsProjectionSelectionDialog per seleccionar la projecció cada cop que l'usuari obre un projecte
 
 ```
-iface.newProjectCreated.connect(lambda: QgsProjectionSelectionDialog().exec())
+dialeg = QgsProjectionSelectionDialog()
+
+iface.newProjectCreated.connect(lambda: dialeg.exec_())
+
+dialeg.crs()
 ```
+
+Bona pràctica, no connectar funcions anònimes! ^^
