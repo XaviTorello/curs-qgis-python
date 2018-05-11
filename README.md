@@ -267,3 +267,44 @@ geom.asWkt()
 #### Calculadora de camps
 
 Ens ajudarà a crear expressions complexes
+
+
+
+
+-----------------------------
+
+
+
+### Dia 2
+
+#### Afegir accions
+
+Dins de la config d'una layer, hi ha la opció "Sections"
+
+Ens permetrà afegir una secció de tipus python.
+
+Definirem l'scope (on apareix l'acció):
+- "canvas" //l'afegeix a dins dels utils (icona settings)
+- "feature scope" //ho tindrem dins de la vista del camp
+
+Definim el codi en python:
+
+```
+[%wikipedia%]
+```
+, expressió que substitueix pel camp wikipedia
+
+```
+import urllib
+import webbrowser
+
+url ="https://en.wikipedia.org/wiki" + "[%wikipedia%]"
+
+try:
+	urllib.request.urlopen(url)
+	webbrowser.open(url, new=0, autoraise=True)
+except:
+	QtGui.QMessageBox.warning(None, "asdadasd")
+```
+
+A la icona de settings apareixerà la nostra nova acció "wikipedia"
