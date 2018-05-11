@@ -324,3 +324,61 @@ Activar els tips via menú "View" -> "Map tips".
 Activem els maps tips, i seleccionem "wikipedia" dins del combo "Display expression".
 
 Al deixar el cursor sobre un país ens apareix el nom del país!
+
+Ara tunejarem una mica el tip amb blocs html generats via python,
+
+crearem una funció nova amb l'editor de funcions fent un "new file": wikipedia, amb:
+```
+import urllib
+import json
+from qgis.core import *
+from qgis.gui import *
+
+@qgsfunction(args="auto", group="Custom")
+def wikipediaSummary(name, feature, parent):
+	baseurl = 'https://en.wikipedia.org/w/api.php?'
+	params={
+			'action': 'query',
+			'format': 'json',
+			'titles': name,
+			'prop': 'extracts',
+			'exintro': True,
+			'explaintext': True,
+			}
+	url = baseurl + urllib.parse.urlencode(params)
+	try:
+		response = urllib.request.urlopen(url)  
+		sresults = response.read()
+		results = json.loads(sresults)
+		extract = list(results['query']['pages'].values())[0]['extract']
+		return extract
+	except Exception:
+		return "No wikipedia entry was found"
+
+'''
+<style>
+p {width: 300px;}
+</style>
+<p>
+[% wikipediaSummary(“wikipedia”) %]
+</p>
+'''
+```
+
+farem "load" per carregar-la, i a l'expression definirem:
+```
+wikipediaSummary("wikipedia")
+```
+, també la podem buscar al llistat dins de "custom" > "wikipediaSummary"
+
+Veurem que a l'"output preview" ja ha retornat el resultat esperat.
+
+Desarem, i l'afegirem al "map tip" insertant:
+```
+[%  wikipediaSummary( "wikipedia") %]
+```
+
+Ara al passar el cursor per sobre de França ens retorna el resum relacionat:
+```
+France (French: [fʁɑ̃s]), officially the French Republic (French: République française [ʁepyblik fʁɑ̃sɛz]), is a country whose territory consists of metropolitan France in western Europe, as well as several overseas regions and territories. The metropolitan area of France extends from the Mediterranean Sea ...
+```
