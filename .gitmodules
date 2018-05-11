@@ -1,0 +1,3 @@
+[submodule "curso-qgis-python"]
+	path = curso-qgis-python
+	url = git@github.com:volaya/curso-qgis-python.git
